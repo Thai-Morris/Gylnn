@@ -160,6 +160,16 @@
 
     <title>RM International Resource Group</title>
 
+    <link
+      rel="preload"
+      as="image"
+      type="image/webp"
+      href="assets/images/optimized/portrait-560.webp"
+      imagesrcset="assets/images/optimized/portrait-480.webp 480w, assets/images/optimized/portrait-560.webp 560w, assets/images/optimized/portrait-720.webp 720w, assets/images/optimized/portrait-960.webp 960w"
+      imagesizes="(max-width: 575px) 60vw, (max-width: 991px) 75vw, 430px"
+      fetchpriority="high"
+    >
+
     <link rel="icon" href="assets/favicons/favicon.ico" sizes="any">
     <link
       rel="icon"
@@ -184,11 +194,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-      rel="stylesheet"
+      rel="preload"
       href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&amp;display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     >
-    <link rel="stylesheet" href="assets/vendor/bootstrap-grid.min.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/vendor/bootstrap-grid.used.min.css">
+    <link rel="stylesheet" href="assets/css/styles.min.css">
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&amp;display=swap"
+      >
+    </noscript>
   </head>
 
   <body>
@@ -196,12 +214,19 @@
       <div class="container">
         <nav class="nav-shell" aria-label="Primary navigation">
           <a class="brand" href="#hero" aria-label="RM International Resource Group home">
-            <img
-              src="assets/images/rm-monogram.png"
-              alt=""
-              width="577"
-              height="265"
-            >
+            <picture>
+              <source
+                type="image/webp"
+                srcset="assets/images/optimized/rm-monogram-272.webp"
+              >
+              <img
+                src="assets/images/rm-monogram.png"
+                alt=""
+                width="577"
+                height="265"
+                decoding="async"
+              >
+            </picture>
           </a>
 
           <ul class="nav-links">
@@ -258,12 +283,21 @@
             <div class="col-12 col-lg-6">
               <div class="hero-visual">
                 <div class="portrait-frame">
-                  <img
-                    src="assets/images/portrait.png"
-                    alt="Portrait of Glenn"
-                    width="1168"
-                    height="1567"
-                  >
+                  <picture>
+                    <source
+                      type="image/webp"
+                      srcset="assets/images/optimized/portrait-480.webp 480w, assets/images/optimized/portrait-560.webp 560w, assets/images/optimized/portrait-720.webp 720w, assets/images/optimized/portrait-960.webp 960w"
+                      sizes="(max-width: 575px) 60vw, (max-width: 991px) 75vw, 430px"
+                    >
+                    <img
+                      src="assets/images/portrait.png"
+                      alt="Portrait of Glenn"
+                      width="1168"
+                      height="1567"
+                      decoding="async"
+                      fetchpriority="high"
+                    >
+                  </picture>
                 </div>
               </div>
             </div>
@@ -276,14 +310,21 @@
           <div class="row introduction-row">
             <div class="col-12 col-lg-4">
               <div class="introduction-media">
-                <img
-                  src="assets/images/meeting.jpg"
-                  alt="Professionals collaborating during a business meeting"
-                  width="3800"
-                  height="2138"
-                  loading="lazy"
-                  decoding="async"
-                >
+                <picture>
+                  <source
+                    type="image/webp"
+                    srcset="assets/images/optimized/meeting-640.webp 640w, assets/images/optimized/meeting-960.webp 960w, assets/images/optimized/meeting-1440.webp 1440w"
+                    sizes="(max-width: 991px) calc(100vw - 2rem), 380px"
+                  >
+                  <img
+                    src="assets/images/meeting.jpg"
+                    alt="Professionals collaborating during a business meeting"
+                    width="3800"
+                    height="2138"
+                    loading="lazy"
+                    decoding="async"
+                  >
+                </picture>
                 <div class="introduction-heading">
                   <p class="section-label">01 / Introduction</p>
                   <h2 id="introduction-title">Introduction</h2>
@@ -338,7 +379,7 @@
             <div class="col-12 col-sm-6 col-lg">
               <div class="partner-card">
                 <img
-                  src="assets/logos/hollywood-casino-greektown-logo.png"
+                  src="assets/logos/optimized/hollywood-casino-greektown-283.webp"
                   alt="Hollywood Casino at Greektown logo"
                   width="283"
                   height="100"
@@ -365,10 +406,10 @@
             <div class="col-12 col-sm-6 col-lg">
               <div class="partner-card">
                 <img
-                  src="assets/logos/matrix-human-services-logo.png"
+                  src="assets/logos/optimized/matrix-human-services-320.webp"
                   alt="Matrix Human Services logo"
-                  width="2560"
-                  height="823"
+                  width="320"
+                  height="103"
                   loading="lazy"
                   decoding="async"
                 >
