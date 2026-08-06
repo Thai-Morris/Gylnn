@@ -2,11 +2,14 @@
   --navy: #0c2255;
   --navy-deep: #071738;
   --gold: #d49a10;
+  --gold-text: #936500;
+  --gold-bright: #f4c935;
   --ink: #14203a;
   --muted: #5c6678;
-  --paper: #f7f7f3;
+  --paper: #f3f2ec;
   --white: #ffffff;
   --line: rgba(12, 34, 85, 0.13);
+  --header-height: 84px;
 }
 
 *,
@@ -17,6 +20,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-height) + 1rem);
 }
 
 body {
@@ -32,36 +36,48 @@ a {
   color: inherit;
 }
 
+a:focus-visible {
+  outline: 3px solid var(--gold-bright);
+  outline-offset: 4px;
+}
+
 img {
   display: block;
   max-width: 100%;
 }
 
 .site-header {
-  position: absolute;
-  z-index: 10;
+  position: fixed;
+  z-index: 20;
   top: 0;
   left: 0;
   width: 100%;
+  border-bottom: 1px solid var(--line);
+  background: var(--paper);
+  box-shadow: 0 8px 28px rgba(7, 23, 56, 0.07);
 }
 
 .nav-shell {
+  position: relative;
   display: flex;
-  min-height: 104px;
+  min-height: var(--header-height);
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
-  border-bottom: 1px solid var(--line);
 }
 
 .brand {
-  flex: 0 1 224px;
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  padding: 0.45rem 0;
 }
 
 .brand img {
-  width: 224px;
+  width: 136px;
+  max-height: 62px;
   height: auto;
-  mix-blend-mode: multiply;
+  object-fit: contain;
 }
 
 .nav-links {
@@ -84,7 +100,94 @@ img {
 
 .nav-links a:hover,
 .nav-links a:focus-visible {
-  color: var(--gold);
+  color: var(--gold-text);
+  text-decoration: underline;
+  text-underline-offset: 0.3em;
+}
+
+.mobile-nav {
+  position: relative;
+  display: none;
+}
+
+.mobile-nav summary {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.6rem 0;
+  color: var(--navy);
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  list-style: none;
+  text-transform: uppercase;
+}
+
+.mobile-nav summary::-webkit-details-marker {
+  display: none;
+}
+
+.mobile-nav summary:focus-visible {
+  outline: 3px solid var(--gold-bright);
+  outline-offset: 4px;
+}
+
+.menu-icon {
+  display: grid;
+  width: 20px;
+  gap: 4px;
+}
+
+.menu-icon span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.mobile-nav[open] .menu-icon span:first-child {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.mobile-nav[open] .menu-icon span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-nav[open] .menu-icon span:last-child {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+.mobile-nav ul {
+  position: absolute;
+  top: calc(100% + 0.55rem);
+  right: 0;
+  width: min(78vw, 240px);
+  margin: 0;
+  padding: 0.45rem;
+  border: 1px solid var(--line);
+  background: var(--white);
+  box-shadow: 0 18px 42px rgba(7, 23, 56, 0.18);
+  list-style: none;
+}
+
+.mobile-nav a {
+  display: block;
+  padding: 0.85rem 0.9rem;
+  color: var(--navy);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.mobile-nav a:hover,
+.mobile-nav a:focus-visible {
+  color: var(--gold-text);
+  background: var(--paper);
 }
 
 .hero {
@@ -93,7 +196,7 @@ img {
   min-height: 100svh;
   align-items: center;
   overflow: hidden;
-  padding: 136px 0 54px;
+  padding: calc(var(--header-height) + 44px) 0 54px;
   isolation: isolate;
 }
 
@@ -138,7 +241,7 @@ img {
   align-items: center;
   gap: 0.75rem;
   margin: 0 0 1.2rem;
-  color: var(--gold);
+  color: var(--gold-text);
   font-size: clamp(0.7rem, 0.9vw, 0.79rem);
   font-weight: 800;
   letter-spacing: 0.18em;
@@ -279,7 +382,7 @@ h1 {
   height: 96%;
   object-fit: contain;
   object-position: bottom center;
-  filter: saturate(0.94) contrast(0.98);
+  filter: saturate(0.82) contrast(0.98);
 }
 
 .introduction {
@@ -296,7 +399,7 @@ h1 {
 
 .section-label {
   margin: 0 0 1rem;
-  color: var(--gold);
+  color: var(--gold-text);
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.14em;
@@ -340,7 +443,7 @@ h1 {
 }
 
 .introduction-heading .section-label {
-  color: #f4c935;
+  color: var(--gold-bright);
 }
 
 .introduction h2 {
@@ -385,7 +488,7 @@ h1 {
 }
 
 #partners .section-label {
-  color: var(--gold);
+  color: var(--gold-bright);
 }
 
 #partners h1 {
@@ -421,6 +524,7 @@ h1 {
 }
 
 .partner-card-dark {
+  border-color: rgba(212, 154, 16, 0.45);
   background: #071b46;
 }
 
@@ -578,7 +682,7 @@ h1 {
 }
 
 #contact .section-label {
-  color: #f4c935;
+  color: var(--gold-bright);
 }
 
 #contact h1 {
@@ -651,7 +755,7 @@ h1 {
 
 .contact-role {
   margin: 0.65rem 0 0;
-  color: var(--gold);
+  color: var(--gold-text);
   font-size: 0.72rem;
   font-style: normal;
   font-weight: 800;
@@ -706,7 +810,9 @@ h1 {
 
 .contact-detail a:hover,
 .contact-detail a:focus-visible {
-  color: var(--gold);
+  color: var(--gold-text);
+  text-decoration: underline;
+  text-underline-offset: 0.3em;
 }
 
 .contact-store-link {
@@ -763,20 +869,25 @@ h1 {
 }
 
 @media (max-width: 767.98px) {
-  .nav-shell {
-    min-height: 92px;
+  :root {
+    --header-height: 72px;
   }
 
-  .brand {
-    flex-basis: 190px;
+  .nav-shell {
+    min-height: var(--header-height);
   }
 
   .brand img {
-    width: 190px;
+    width: 118px;
+    max-height: 54px;
   }
 
-  .nav-links li:not(:last-child) {
+  .nav-links {
     display: none;
+  }
+
+  .mobile-nav {
+    display: block;
   }
 
   .hero {
@@ -845,10 +956,6 @@ h1 {
     --bs-gutter-x: 2rem;
   }
 
-  .nav-links {
-    display: none;
-  }
-
   .hero-actions {
     align-items: stretch;
     flex-direction: column;
@@ -896,13 +1003,17 @@ h1 {
 }
 
 @media (max-height: 760px) and (min-width: 992px) {
-  .nav-shell {
-    min-height: 88px;
+  :root {
+    --header-height: 76px;
   }
 
-  .brand,
+  .nav-shell {
+    min-height: var(--header-height);
+  }
+
   .brand img {
-    width: 184px;
+    width: 124px;
+    max-height: 56px;
   }
 
   .hero {
