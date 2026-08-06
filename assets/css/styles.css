@@ -58,7 +58,6 @@ img {
 }
 
 .nav-shell {
-  position: relative;
   display: flex;
   min-height: var(--header-height);
   align-items: center;
@@ -455,7 +454,6 @@ h1 {
 }
 
 .introduction h2 {
-  max-width: none;
   margin: 0;
   color: var(--white);
   font-family: Georgia, "Times New Roman", serif;
@@ -481,7 +479,14 @@ h1 {
   overflow: hidden;
   padding: clamp(4.75rem, 8vw, 7.5rem) 0;
   color: var(--white);
-  background: var(--navy-deep);
+  background-color: var(--navy-deep);
+  background-image: radial-gradient(
+      circle at 1px 1px,
+      rgba(244, 201, 53, 0.13) 1px,
+      transparent 1.5px
+    ),
+    linear-gradient(135deg, var(--navy-deep) 0%, #0c2a58 100%);
+  background-size: 22px 22px, 100% 100%;
 }
 
 #partners::before {
@@ -765,7 +770,6 @@ h1 {
   margin: 0.65rem 0 0;
   color: var(--gold-text);
   font-size: 0.72rem;
-  font-style: normal;
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -842,10 +846,6 @@ h1 {
 }
 
 @media (max-width: 1199.98px) {
-  .hero {
-    padding-top: 128px;
-  }
-
   h1 {
     font-size: clamp(3rem, 5vw, 4.8rem);
   }
@@ -879,10 +879,6 @@ h1 {
 @media (max-width: 767.98px) {
   :root {
     --header-height: 72px;
-  }
-
-  .nav-shell {
-    min-height: var(--header-height);
   }
 
   .brand img {
@@ -965,7 +961,6 @@ h1 {
   }
 
   .hero-actions {
-    align-items: stretch;
     flex-direction: column;
   }
 
@@ -1013,10 +1008,6 @@ h1 {
 @media (max-height: 760px) and (min-width: 992px) {
   :root {
     --header-height: 76px;
-  }
-
-  .nav-shell {
-    min-height: var(--header-height);
   }
 
   .brand img {
