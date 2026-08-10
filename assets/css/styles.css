@@ -395,8 +395,33 @@ h1 {
 }
 
 .introduction-row {
-  align-items: stretch;
+  align-items: flex-start;
   row-gap: 2.5rem;
+}
+
+.about-header {
+  max-width: 30rem;
+  margin-bottom: 0;
+}
+
+.about-header h2 {
+  margin: 0;
+  color: var(--navy);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3.25rem, 7vw, 6.5rem);
+  font-weight: 500;
+  letter-spacing: -0.055em;
+  line-height: 0.95;
+}
+
+.about-lead {
+  max-width: 26ch;
+  margin: 1.25rem 0 0;
+  color: #344058;
+  font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+  font-size: clamp(1.35rem, 2.2vw, 2rem);
+  line-height: 1.35;
+  text-wrap: balance;
 }
 
 .section-label {
@@ -417,17 +442,6 @@ h1 {
   box-shadow: 0 24px 54px rgba(7, 23, 56, 0.16);
 }
 
-.introduction-media::after {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(7, 23, 56, 0.05) 20%,
-    rgba(7, 23, 56, 0.88) 100%
-  );
-  content: "";
-}
-
 .introduction-media > picture {
   display: block;
   width: 100%;
@@ -441,30 +455,28 @@ h1 {
   object-position: 37% center;
 }
 
-.introduction-heading {
-  position: absolute;
-  z-index: 1;
-  right: clamp(1.5rem, 3vw, 2.5rem);
-  bottom: clamp(1.75rem, 3vw, 2.75rem);
-  left: clamp(1.5rem, 3vw, 2.5rem);
+.introduction-content {
+  display: flex;
+  align-items: flex-start;
 }
 
-.introduction-heading .section-label {
-  color: var(--gold-bright);
+.introduction-copy {
+  max-width: 64ch;
 }
 
-.introduction h2 {
-  margin: 0;
-  color: var(--white);
+.introduction-subtitle {
+  max-width: 24ch;
+  margin: 0 0 1.5rem;
+  color: var(--navy);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(2.75rem, 6vw, 3.8rem);
+  font-size: clamp(1.8rem, 3vw, 2.75rem);
   font-weight: 500;
-  letter-spacing: -0.045em;
-  line-height: 1;
+  letter-spacing: -0.035em;
+  line-height: 1.12;
+  text-wrap: balance;
 }
 
 .introduction-text {
-  max-width: 64ch;
   margin: 0;
   color: #344058;
   font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
@@ -472,6 +484,21 @@ h1 {
   font-size: clamp(1.12rem, 1.45vw, 1.35rem);
   line-height: 1.82;
   text-wrap: pretty;
+}
+
+.introduction-text + .introduction-text {
+  margin-top: 1.5rem;
+}
+
+.about-mission {
+  margin-top: clamp(2.75rem, 5vw, 4.5rem);
+  padding-top: clamp(2.75rem, 4vw, 4rem);
+  border-top: 1px solid var(--line);
+}
+
+.about-mission-row {
+  align-items: stretch;
+  row-gap: 2.5rem;
 }
 
 #partners {
@@ -912,12 +939,6 @@ h1 {
 
   .introduction-media {
     min-height: clamp(360px, 72vw, 500px);
-  }
-
-  .introduction-heading {
-    right: 1.5rem;
-    bottom: 1.75rem;
-    left: 1.5rem;
   }
 
   .introduction-text {
