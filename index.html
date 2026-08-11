@@ -200,7 +200,7 @@
       onload="this.onload=null;this.rel='stylesheet'"
     >
     <link rel="stylesheet" href="assets/vendor/bootstrap-grid.used.min.css">
-    <link rel="stylesheet" href="assets/css/styles.min.css?v=20260810-3">
+    <link rel="stylesheet" href="assets/css/styles.min.css?v=20260811-2">
     <script src="assets/js/site.min.js?v=20260809-1" defer></script>
     <noscript>
       <link
@@ -322,7 +322,6 @@
               aria-labelledby="introduction-title"
             >
               <div class="introduction-copy">
-                <p class="section-label">Our story</p>
                 <h3 class="introduction-subtitle" id="introduction-title">Introduction</h3>
                 <p class="introduction-text">
                   RM International is a second-generation business that began its journey in the
@@ -466,75 +465,103 @@
       <section id="Services" aria-labelledby="services-title">
         <div class="container">
           <div class="row services-heading">
-            <div class="col-12 col-lg-8">
+            <div class="col-12 col-lg-7">
               <p class="section-label">03 / What we do</p>
               <h1 id="services-title">Services Offered</h1>
+            </div>
+            <div class="col-12 col-lg-4 offset-lg-1 services-intro-column">
+              <p class="services-intro">
+                Practical, responsive solutions that help businesses, facilities, and travelers
+                keep moving.
+              </p>
             </div>
           </div>
 
           <div class="row services-grid">
             <div class="col-12 col-md-6 col-lg-4">
               <article class="service-card">
-                <div class="service-icon" aria-hidden="true">
+                <div class="service-visual">
                   <img
-                    src="assets/icons/computer-desk-office.svg"
-                    alt=""
-                    width="800"
-                    height="800"
+                    src="assets/images/services/office-solutions-768.webp"
+                    srcset="
+                      assets/images/services/office-solutions-480.webp 480w,
+                      assets/images/services/office-solutions-768.webp 768w
+                    "
+                    sizes="(min-width: 1400px) 416px, (min-width: 1200px) 356px, (min-width: 992px) 30vw, (min-width: 768px) 45vw, calc(100vw - 2rem)"
+                    alt="Modern office workstations with ergonomic seating"
+                    width="768"
+                    height="576"
                     loading="lazy"
                     decoding="async"
                   >
+                  <span class="service-number" aria-hidden="true">01</span>
+                  <span class="service-category">Workplace</span>
                 </div>
-                <h2>Office Solutions</h2>
-                <p>
-                  We provide a comprehensive range of office solutions tailored to meet your
-                  needs. From essential office supplies and cutting-edge office equipment to
-                  stylish office furniture and innovative design, we have everything to create an
-                  efficient workspace. Explore our break room solutions and more to ensure your
-                  office runs smoothly.
-                </p>
+                <div class="service-content">
+                  <h2>Office Solutions</h2>
+                  <p class="service-copy">
+                    Essential supplies, workplace technology, furniture, and thoughtful design for
+                    more efficient, comfortable teams.
+                  </p>
+                </div>
               </article>
             </div>
 
             <div class="col-12 col-md-6 col-lg-4">
               <article class="service-card">
-                <div class="service-icon" aria-hidden="true">
+                <div class="service-visual">
                   <img
-                    src="assets/icons/industrial-factory.svg"
-                    alt=""
-                    width="512"
-                    height="512"
+                    src="assets/images/services/industrial-electrical-supply-768.webp"
+                    srcset="
+                      assets/images/services/industrial-electrical-supply-480.webp 480w,
+                      assets/images/services/industrial-electrical-supply-768.webp 768w
+                    "
+                    sizes="(min-width: 1400px) 416px, (min-width: 1200px) 356px, (min-width: 992px) 30vw, (min-width: 768px) 45vw, calc(100vw - 2rem)"
+                    alt="Modern industrial production facility with machinery and supply lines"
+                    width="768"
+                    height="576"
                     loading="lazy"
                     decoding="async"
                   >
+                  <span class="service-number" aria-hidden="true">02</span>
+                  <span class="service-category">Operations</span>
                 </div>
-                <h2>Industrial &amp; Electrical Supply</h2>
-                <p>
-                  Our new division specializes in industrial and electrical supplies, dedicated to
-                  keeping your facilities, projects, and operations running efficiently. We work
-                  tirelessly to deliver reliable supply solutions that empower your business.
-                </p>
+                <div class="service-content">
+                  <h2>Industrial &amp; Electrical Supply</h2>
+                  <p class="service-copy">
+                    Dependable industrial and electrical supply solutions that keep facilities,
+                    projects, and day-to-day operations running.
+                  </p>
+                </div>
               </article>
             </div>
 
             <div class="col-12 col-md-6 col-lg-4">
               <article class="service-card">
-                <div class="service-icon" aria-hidden="true">
+                <div class="service-visual">
                   <img
-                    src="assets/icons/airport-transfer.svg"
-                    alt=""
-                    width="800"
-                    height="800"
+                    src="assets/images/services/airport-shuttle-768.webp"
+                    srcset="
+                      assets/images/services/airport-shuttle-480.webp 480w,
+                      assets/images/services/airport-shuttle-768.webp 768w
+                    "
+                    sizes="(min-width: 1400px) 416px, (min-width: 1200px) 356px, (min-width: 992px) 30vw, (min-width: 768px) 45vw, calc(100vw - 2rem)"
+                    alt="Three airport shuttle vehicles ready for passenger transportation"
+                    width="768"
+                    height="576"
                     loading="lazy"
                     decoding="async"
                   >
+                  <span class="service-number" aria-hidden="true">03</span>
+                  <span class="service-category">Transportation</span>
                 </div>
-                <h2>RM Airport Shuttle</h2>
-                <p>
-                  Experience worry-free transportation with RM Airport Shuttle! We offer convenient
-                  rides from Port Huron and surrounding areas to all Metro Area airports. Schedule
-                  your ride today via call, text, or email, and travel with peace of mind.
-                </p>
+                <div class="service-content">
+                  <h2>RM Airport Shuttle</h2>
+                  <p class="service-copy">
+                    Convenient airport transportation from Port Huron and surrounding communities
+                    to metro-area airports.
+                  </p>
+                </div>
               </article>
             </div>
           </div>

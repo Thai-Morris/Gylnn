@@ -588,7 +588,9 @@ h1 {
   position: relative;
   overflow: hidden;
   padding: clamp(4.75rem, 8vw, 7.5rem) 0;
-  background: var(--white);
+  background:
+    radial-gradient(circle at 94% 5%, rgba(212, 154, 16, 0.12), transparent 25rem),
+    linear-gradient(180deg, var(--white) 0%, var(--paper) 100%);
 }
 
 #Services::after {
@@ -604,9 +606,9 @@ h1 {
 }
 
 #Services h1 {
-  max-width: none;
+  max-width: 9ch;
   font-size: clamp(3.1rem, 6vw, 6.25rem);
-  line-height: 0.96;
+  line-height: 0.9;
 }
 
 .services-heading,
@@ -616,34 +618,81 @@ h1 {
 }
 
 .services-heading {
+  align-items: flex-end;
   margin-bottom: clamp(2.75rem, 5vw, 4.5rem);
+  row-gap: 1.75rem;
 }
 
 .services-grid {
   row-gap: 1.5rem;
 }
 
+.services-grid > div {
+  display: flex;
+}
+
+.services-intro-column {
+  align-self: flex-end;
+}
+
+.services-intro {
+  position: relative;
+  margin: 0;
+  padding: 1.15rem 0 0 1.15rem;
+  color: var(--muted);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+  line-height: 1.55;
+}
+
+.services-intro::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2.8rem;
+  height: 2px;
+  background: var(--gold);
+  content: "";
+}
+
 .service-card {
   position: relative;
+  display: flex;
+  width: 100%;
   min-height: 100%;
-  padding: clamp(1.65rem, 3vw, 2.4rem);
+  flex-direction: column;
+  overflow: hidden;
   border: 1px solid var(--line);
-  background: var(--paper);
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: 0 18px 52px rgba(7, 23, 56, 0.08);
   transition: border-color 180ms ease, box-shadow 180ms ease,
     transform 180ms ease;
 }
 
-.service-card::before {
+.service-visual {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: var(--navy-deep);
+}
+
+.service-visual::after {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background: var(--gold);
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(7, 23, 56, 0.02) 40%, rgba(7, 23, 56, 0.6) 100%),
+    linear-gradient(110deg, rgba(12, 34, 85, 0.12), transparent 55%);
   content: "";
-  transform: scaleX(0.22);
-  transform-origin: left;
-  transition: transform 180ms ease;
+  pointer-events: none;
+}
+
+.service-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.78) contrast(1.04);
+  transition: filter 450ms ease, transform 450ms ease;
 }
 
 .service-card:hover {
@@ -652,31 +701,43 @@ h1 {
   transform: translateY(-4px);
 }
 
-.service-card:hover::before {
-  transform: scaleX(1);
+.service-card:hover .service-visual img {
+  filter: saturate(0.94) contrast(1.04);
+  transform: scale(1.035);
 }
 
-.service-icon {
+.service-number,
+.service-category {
+  position: absolute;
+  z-index: 1;
+  bottom: 0.85rem;
+  color: var(--white);
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.service-number {
+  left: 1rem;
+  color: var(--gold-bright);
+}
+
+.service-category {
+  right: 1rem;
+}
+
+.service-content {
   display: flex;
-  width: clamp(4.5rem, 7vw, 5.5rem);
-  height: clamp(4.5rem, 7vw, 5.5rem);
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 2rem;
-  border-radius: 50%;
-  background: rgba(212, 154, 16, 0.12);
-}
-
-.service-icon img {
-  width: 58%;
-  height: 58%;
-  object-fit: contain;
-  filter: brightness(0) saturate(100%) invert(13%) sepia(37%) saturate(2504%)
-    hue-rotate(195deg) brightness(87%) contrast(103%);
+  min-height: 16rem;
+  flex: 1;
+  flex-direction: column;
+  padding: clamp(1.35rem, 2.4vw, 2rem);
+  border-top: 3px solid var(--gold);
 }
 
 .service-card h2 {
-  min-height: 2.45em;
+  min-height: 3.1em;
   margin: 0;
   color: var(--navy);
   font-family: Georgia, "Times New Roman", serif;
@@ -686,7 +747,7 @@ h1 {
   line-height: 1.08;
 }
 
-.service-card p {
+.service-copy {
   max-width: 38ch;
   margin: 1.15rem 0 0;
   color: var(--muted);
@@ -903,6 +964,12 @@ h1 {
   }
 }
 
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .services-grid > div:last-child {
+    margin-left: 25%;
+  }
+}
+
 @media (max-width: 767.98px) {
   :root {
     --header-height: 72px;
@@ -971,6 +1038,10 @@ h1 {
     min-height: 0;
   }
 
+  .service-content {
+    min-height: 0;
+  }
+
   #contact {
     padding: 4.5rem 0;
   }
@@ -1007,8 +1078,8 @@ h1 {
     width: 86%;
   }
 
-  .service-card {
-    padding: 1.5rem;
+  .service-content {
+    padding: 1.35rem;
   }
 
   .contact-details {
@@ -1072,7 +1143,7 @@ h1 {
   }
 
   .service-card,
-  .service-card::before {
+  .service-visual img {
     transition: none;
   }
 }
