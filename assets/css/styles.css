@@ -636,23 +636,17 @@ h1 {
 }
 
 .services-intro {
-  position: relative;
   margin: 0;
-  padding: 1.15rem 0 0 1.15rem;
   color: var(--muted);
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(1rem, 1.6vw, 1.2rem);
   line-height: 1.55;
 }
 
-.services-intro::before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 2.8rem;
-  height: 2px;
-  background: var(--gold);
-  content: "";
+@media (min-width: 992px) {
+  .services-intro-column {
+    padding-bottom: 0.3rem;
+  }
 }
 
 .service-card {
