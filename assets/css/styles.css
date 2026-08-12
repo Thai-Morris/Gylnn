@@ -1241,23 +1241,6 @@ h1 {
   text-wrap: balance;
 }
 
-.footer-location {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin: 1.5rem 0 0;
-  color: rgba(255, 255, 255, 0.65);
-  font-size: 0.88rem;
-  letter-spacing: 0.06em;
-}
-
-.footer-location::before {
-  width: 2rem;
-  height: 1px;
-  background: var(--gold);
-  content: "";
-}
-
 .footer-navigation ul {
   display: grid;
   gap: 0.35rem;
