@@ -152,16 +152,6 @@
 
     <title>Office, Industrial &amp; Shuttle Services | RM International</title>
 
-    <link
-      rel="preload"
-      as="image"
-      type="image/webp"
-      href="assets/images/optimized/portrait-560.webp"
-      imagesrcset="assets/images/optimized/portrait-480.webp 480w, assets/images/optimized/portrait-560.webp 560w, assets/images/optimized/portrait-720.webp 720w, assets/images/optimized/portrait-960.webp 960w"
-      imagesizes="(max-width: 575px) 60vw, (max-width: 991px) 75vw, 430px"
-      fetchpriority="high"
-    >
-
     <link rel="icon" href="assets/favicons/favicon.ico" sizes="any">
     <link
       rel="icon"
@@ -192,7 +182,7 @@
       onload="this.onload=null;this.rel='stylesheet'"
     >
     <link rel="stylesheet" href="assets/vendor/bootstrap-grid.used.min.css">
-    <link rel="stylesheet" href="assets/css/styles.min.css?v=20260811-4">
+    <link rel="stylesheet" href="assets/css/styles.min.css?v=20260812-2">
     <script src="assets/js/site.min.js?v=20260809-1" defer></script>
     <noscript>
       <link
@@ -253,7 +243,7 @@
       <section class="hero" id="hero" aria-labelledby="hero-title">
         <div class="container">
           <div class="row hero-row">
-            <div class="col-12 col-lg-6">
+            <div class="col-12 col-lg-8">
               <div class="hero-copy">
                 <p class="eyebrow">Community-centered solutions</p>
                 <h1 id="hero-title">Partnering for meaningful growth.</h1>
@@ -263,8 +253,9 @@
                 </p>
 
                 <div class="hero-actions">
-                  <a class="button button-primary" href="#Services">Explore our services</a>
-                  <a class="button button-secondary" href="#contact">Partner with us</a>
+                  <a class="button button-primary" href="#contact">Get a quote</a>
+                  <a class="button button-secondary" href="#Services">Explore our services</a>
+
                 </div>
 
                 <p class="hero-note">
@@ -273,27 +264,6 @@
               </div>
             </div>
 
-            <div class="col-12 col-lg-6">
-              <div class="hero-visual">
-                <div class="portrait-frame">
-                  <picture>
-                    <source
-                      type="image/webp"
-                      srcset="assets/images/optimized/portrait-480.webp 480w, assets/images/optimized/portrait-560.webp 560w, assets/images/optimized/portrait-720.webp 720w, assets/images/optimized/portrait-960.webp 960w"
-                      sizes="(max-width: 575px) 60vw, (max-width: 991px) 75vw, 430px"
-                    >
-                    <img
-                      src="assets/images/portrait.png"
-                      alt="Glen McCoy, President of RM International Resource Group"
-                      width="1168"
-                      height="1567"
-                      decoding="async"
-                      fetchpriority="high"
-                    >
-                  </picture>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -491,16 +461,34 @@
       <section class="introduction" id="about" aria-labelledby="about-title">
         <div class="container">
           <div class="row introduction-row">
-            <div class="col-12 col-lg-4">
+            <div class="col-12 col-lg-5 about-summary">
               <header class="about-header">
                 <p class="section-label">03 / About us</p>
                 <h2 id="about-title">About Us</h2>
                 <p class="about-lead">Partnering for Meaningful Growth for All Parties</p>
               </header>
+
+              <div class="about-portrait-frame">
+                <picture>
+                  <source
+                    type="image/webp"
+                    srcset="assets/images/optimized/portrait-480.webp 480w, assets/images/optimized/portrait-560.webp 560w, assets/images/optimized/portrait-720.webp 720w"
+                    sizes="(max-width: 767px) min(74vw, 290px), (max-width: 991px) 36vw, 270px"
+                  >
+                  <img
+                    src="assets/images/portrait.png"
+                    alt="Glen McCoy, President of RM International Resource Group"
+                    width="1168"
+                    height="1567"
+                    loading="lazy"
+                    decoding="async"
+                  >
+                </picture>
+              </div>
             </div>
 
             <section
-              class="col-12 col-lg-7 offset-lg-1 introduction-content"
+              class="col-12 col-lg-7 introduction-content"
               aria-labelledby="introduction-title"
             >
               <div class="introduction-copy">
